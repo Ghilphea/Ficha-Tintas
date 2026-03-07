@@ -1,346 +1,186 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <title>Ficha RPG</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English&display=swap" rel="stylesheet">
-
 <style>
 
 body{
-background:#e8d5b7;
-font-family:'IM Fell English', serif;
-padding:40px;
+background:#222;
+display:flex;
+flex-direction:column;
+align-items:center;
+font-family:serif;
 }
 
-.page{
-max-width:900px;
-margin:auto;
-background:#f5e6c8;
-padding:40px;
-border:6px solid #5c2f1d;
-border-radius:10px;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
+.pagina{
+position:relative;
+width:800px;
+margin:40px;
 }
 
-h1{
-text-align:center;
-font-family:'Cinzel', serif;
-font-size:40px;
-margin-bottom:30px;
-}
-
-h2{
-margin-top:40px;
-border-bottom:2px solid #5c2f1d;
-padding-bottom:5px;
-font-family:'Cinzel', serif;
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin-bottom:20px;
-}
-
-.skills{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-}
-
-input, textarea{
-
+.pagina img{
 width:100%;
-padding:6px;
-font-family:inherit;
-background:#fff8e6;
-border:1px solid #8a5a44;
-border-radius:4px;
+display:block;
+}
 
+.campo{
+position:absolute;
+background:transparent;
+border:none;
+border-bottom:1px solid rgba(0,0,0,0.5);
+font-size:16px;
+font-family:serif;
 }
 
 textarea{
-
-min-height:70px;
-
+resize:none;
+border:1px solid rgba(0,0,0,0.3);
+background:transparent;
 }
 
-label{
+/* PAGINA 1 */
 
-font-weight:bold;
+.nome{top:190px;left:150px;width:250px;}
+.origem{top:230px;left:150px;width:250px;}
 
-}
+.vidaMax{top:190px;left:470px;width:80px;}
+.vidaAtual{top:230px;left:470px;width:80px;}
 
-button{
+.impulsoAtual{top:310px;left:380px;width:80px;}
 
-margin-top:30px;
-padding:10px 20px;
-font-size:16px;
-background:#5c2f1d;
-color:white;
-border:none;
-cursor:pointer;
-border-radius:5px;
+.estado{top:350px;left:200px;width:450px;}
 
-}
+.forca{top:430px;left:150px;width:100px;}
+.agilidade{top:460px;left:150px;width:100px;}
+.tecnica{top:490px;left:150px;width:100px;}
+.percepcao{top:520px;left:150px;width:100px;}
+.presenca{top:550px;left:150px;width:100px;}
+.intelecto{top:580px;left:150px;width:100px;}
+.vigor{top:610px;left:150px;width:100px;}
 
-button:hover{
+.energiaMax{top:430px;left:470px;width:80px;}
+.energiaAtual{top:470px;left:470px;width:80px;}
 
-background:#7a3e27;
+/* PAGINA 3 */
 
-}
+.simples{top:200px;left:80px;width:640px;height:100px;}
+.complexos{top:350px;left:80px;width:640px;height:100px;}
+.avancados{top:510px;left:80px;width:640px;height:130px;}
+
+/* PAGINA 4 */
+
+.armaPrincipal{top:180px;left:300px;width:350px;}
+.armaSecundaria{top:230px;left:300px;width:350px;}
+
+.protecao{top:310px;left:80px;width:640px;height:90px;}
+
+.itemImportante{top:430px;left:80px;width:640px;height:220px;}
+
+/* PAGINA 5 */
+
+.magia1{top:200px;left:80px;width:640px;height:80px;}
+.magia2{top:320px;left:80px;width:640px;height:80px;}
+.magia3{top:440px;left:80px;width:640px;height:80px;}
+.magia4{top:560px;left:80px;width:640px;height:80px;}
 
 </style>
-
 </head>
 
 <body>
 
-<div class="page">
+<!-- PAGINA 1 -->
 
-<h1>SEU LIVRO</h1>
+<div class="pagina">
+<img src="pagina1.png">
 
-<div class="grid">
+<input class="campo nome">
+<input class="campo origem">
 
-<label>Nome</label>
-<input id="nome">
+<input class="campo vidaMax">
+<input class="campo vidaAtual">
 
-<label>Origem</label>
-<input id="origem">
+<input class="campo impulsoAtual">
 
-<label>Vida Máx</label>
-<input id="vidaMax">
+<input class="campo estado">
 
-<label>Vida Atual</label>
-<input id="vidaAtual">
+<input class="campo forca">
+<input class="campo agilidade">
+<input class="campo tecnica">
+<input class="campo percepcao">
+<input class="campo presenca">
+<input class="campo intelecto">
+<input class="campo vigor">
 
-<label>Energia Máx</label>
-<input id="energiaMax">
-
-<label>Energia Atual</label>
-<input id="energiaAtual">
-
-<label>Impulso Máx</label>
-<input id="impulsoMax" value="3">
-
-<label>Impulso Atual</label>
-<input id="impulsoAtual">
-
-<label>Estado Atual</label>
-<input id="estado">
+<input class="campo energiaMax">
+<input class="campo energiaAtual">
 
 </div>
 
 
-<h2>Atributos</h2>
+<!-- PAGINA 2 -->
 
-<div class="grid">
+<div class="pagina">
+<img src="pagina2.png">
+</div>
 
-<label>Força</label>
-<input id="forca">
 
-<label>Agilidade</label>
-<input id="agilidade">
+<!-- PAGINA 3 -->
 
-<label>Técnica</label>
-<input id="tecnica">
+<div class="pagina">
+<img src="pagina3.png">
 
-<label>Percepção</label>
-<input id="percepcao">
-
-<label>Presença</label>
-<input id="presenca">
-
-<label>Intelecto</label>
-<input id="intelecto">
-
-<label>Vigor</label>
-<input id="vigor">
+<textarea class="campo simples"></textarea>
+<textarea class="campo complexos"></textarea>
+<textarea class="campo avancados"></textarea>
 
 </div>
 
 
-<h2>Equipamentos</h2>
+<!-- PAGINA 4 -->
 
-<label>Arma Principal</label>
-<input id="armaPrincipal">
+<div class="pagina">
+<img src="pagina4.png">
 
-<label>Arma Secundária</label>
-<input id="armaSecundaria">
+<input class="campo armaPrincipal">
+<input class="campo armaSecundaria">
 
-<label>Proteção</label>
-<textarea id="protecao"></textarea>
-
-<label>Item Importante</label>
-<textarea id="itemImportante"></textarea>
-
-
-<h2>Magias</h2>
-
-<label>Magia I</label>
-<textarea id="magia1"></textarea>
-
-<label>Magia II</label>
-<textarea id="magia2"></textarea>
-
-<label>Magia III</label>
-<textarea id="magia3"></textarea>
-
-<label>Magia IV</label>
-<textarea id="magia4"></textarea>
-
-
-<h2>Perícias</h2>
-
-<div class="skills">
-
-<div>
-
-<h3>Combate</h3>
-
-<label>Luta</label>
-<input id="luta">
-
-<label>Armas Brancas</label>
-<input id="armasBrancas">
-
-<label>Armas de Fogo</label>
-<input id="armasFogo">
-
-<label>Esquiva</label>
-<input id="esquiva">
-
-<label>Acrobacia</label>
-<input id="acrobacia">
-
-<label>Controle de Energia</label>
-<input id="controleEnergia">
-
-<label>Finalização</label>
-<input id="finalizacao">
+<textarea class="campo protecao"></textarea>
+<textarea class="campo itemImportante"></textarea>
 
 </div>
 
 
-<div>
+<!-- PAGINA 5 -->
 
-<h3>Social</h3>
+<div class="pagina">
+<img src="pagina5.png">
 
-<label>Persuasão</label>
-<input id="persuasao">
-
-<label>Intimidação</label>
-<input id="intimidacao">
-
-<label>Enganação</label>
-<input id="enganacao">
-
-<label>Empatia</label>
-<input id="empatia">
-
-<label>Performance</label>
-<input id="performance">
-
-<label>Negociação</label>
-<input id="negociacao">
+<textarea class="campo magia1"></textarea>
+<textarea class="campo magia2"></textarea>
+<textarea class="campo magia3"></textarea>
+<textarea class="campo magia4"></textarea>
 
 </div>
-
-
-<div>
-
-<h3>Conhecimento</h3>
-
-<label>Medicina</label>
-<input id="medicina">
-
-<label>Primeiros Socorros</label>
-<input id="socorros">
-
-<label>Anatomia</label>
-<input id="anatomia">
-
-<label>Alquimia Médica</label>
-<input id="alquimia">
-
-</div>
-
-
-<div>
-
-<h3>Sobrevivência</h3>
-
-<label>Sobrevivência</label>
-<input id="sobrevivencia">
-
-<label>Furtividade</label>
-<input id="furtividade">
-
-<label>Escalada</label>
-<input id="escalada">
-
-<label>Resistência</label>
-<input id="resistencia">
-
-<label>Orientação</label>
-<input id="orientacao">
-
-</div>
-
-</div>
-
-
-<h2>Passos Conhecidos</h2>
-
-<label>Passos Simples</label>
-<textarea id="passosSimples"></textarea>
-
-<label>Passos Complexos</label>
-<textarea id="passosComplexos"></textarea>
-
-<label>Passos Avançados</label>
-<textarea id="passosAvancados"></textarea>
-
-
-<button onclick="resetFicha()">Limpar Ficha</button>
-
-</div>
-
 
 <script>
 
-const inputs = document.querySelectorAll("input, textarea")
+const campos = document.querySelectorAll(".campo")
 
-inputs.forEach(input => {
+campos.forEach((campo,i)=>{
 
-const saved = localStorage.getItem(input.id)
+let salvo = localStorage.getItem("campo"+i)
 
-if(saved){
-input.value = saved
+if(salvo){
+campo.value = salvo
 }
 
-input.addEventListener("input", () => {
-
-localStorage.setItem(input.id, input.value)
-
+campo.addEventListener("input",()=>{
+localStorage.setItem("campo"+i,campo.value)
 })
 
 })
-
-function resetFicha(){
-
-if(confirm("Deseja apagar toda a ficha?")){
-
-localStorage.clear()
-location.reload()
-
-}
-
-}
 
 </script>
 
