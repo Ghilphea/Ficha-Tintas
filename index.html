@@ -12,85 +12,96 @@ display:flex;
 flex-direction:column;
 align-items:center;
 font-family:serif;
+margin:0;
 }
+
+/* página agora escala corretamente */
 
 .pagina{
 position:relative;
-width:800px;
+width:90vw;
+max-width:1200px;
+aspect-ratio:1240/1754;
 margin:40px;
 }
 
 .pagina img{
+position:absolute;
 width:100%;
-display:block;
+height:100%;
+left:0;
+top:0;
 }
+
+/* campos */
 
 .campo{
 position:absolute;
 background:transparent;
 border:none;
-border-bottom:1px solid rgba(0,0,0,0.5);
-font-size:16px;
+border-bottom:1px solid rgba(0,0,0,0.6);
+font-size:1vw;
 font-family:serif;
+z-index:2;
 }
 
 textarea{
 resize:none;
-border:1px solid rgba(0,0,0,0.3);
+border:1px solid rgba(0,0,0,0.4);
 background:transparent;
 }
 
+/* POSIÇÕES AGORA EM % PARA ESCALAR */
+
 /* PAGINA 1 */
 
-.nome{top:190px;left:150px;width:250px;}
-.origem{top:230px;left:150px;width:250px;}
+.nome{top:10%;left:12%;width:20%;}
+.origem{top:13%;left:12%;width:20%;}
 
-.vidaMax{top:190px;left:470px;width:80px;}
-.vidaAtual{top:230px;left:470px;width:80px;}
+.vidaMax{top:10%;left:55%;width:6%;}
+.vidaAtual{top:13%;left:55%;width:6%;}
 
-.impulsoAtual{top:310px;left:380px;width:80px;}
+.impulsoAtual{top:18%;left:45%;width:6%;}
 
-.estado{top:350px;left:200px;width:450px;}
+.estado{top:20%;left:20%;width:50%;}
 
-.forca{top:430px;left:150px;width:100px;}
-.agilidade{top:460px;left:150px;width:100px;}
-.tecnica{top:490px;left:150px;width:100px;}
-.percepcao{top:520px;left:150px;width:100px;}
-.presenca{top:550px;left:150px;width:100px;}
-.intelecto{top:580px;left:150px;width:100px;}
-.vigor{top:610px;left:150px;width:100px;}
+.forca{top:24%;left:12%;width:8%;}
+.agilidade{top:26%;left:12%;width:8%;}
+.tecnica{top:28%;left:12%;width:8%;}
+.percepcao{top:30%;left:12%;width:8%;}
+.presenca{top:32%;left:12%;width:8%;}
+.intelecto{top:34%;left:12%;width:8%;}
+.vigor{top:36%;left:12%;width:8%;}
 
-.energiaMax{top:430px;left:470px;width:80px;}
-.energiaAtual{top:470px;left:470px;width:80px;}
+.energiaMax{top:24%;left:55%;width:6%;}
+.energiaAtual{top:26%;left:55%;width:6%;}
 
 /* PAGINA 3 */
 
-.simples{top:200px;left:80px;width:640px;height:100px;}
-.complexos{top:350px;left:80px;width:640px;height:100px;}
-.avancados{top:510px;left:80px;width:640px;height:130px;}
+.simples{top:18%;left:8%;width:84%;height:8%;}
+.complexos{top:32%;left:8%;width:84%;height:8%;}
+.avancados{top:46%;left:8%;width:84%;height:12%;}
 
 /* PAGINA 4 */
 
-.armaPrincipal{top:180px;left:300px;width:350px;}
-.armaSecundaria{top:230px;left:300px;width:350px;}
+.armaPrincipal{top:15%;left:35%;width:40%;}
+.armaSecundaria{top:19%;left:35%;width:40%;}
 
-.protecao{top:310px;left:80px;width:640px;height:90px;}
+.protecao{top:26%;left:8%;width:84%;height:8%;}
 
-.itemImportante{top:430px;left:80px;width:640px;height:220px;}
+.itemImportante{top:36%;left:8%;width:84%;height:18%;}
 
 /* PAGINA 5 */
 
-.magia1{top:200px;left:80px;width:640px;height:80px;}
-.magia2{top:320px;left:80px;width:640px;height:80px;}
-.magia3{top:440px;left:80px;width:640px;height:80px;}
-.magia4{top:560px;left:80px;width:640px;height:80px;}
+.magia1{top:18%;left:8%;width:84%;height:6%;}
+.magia2{top:28%;left:8%;width:84%;height:6%;}
+.magia3{top:38%;left:8%;width:84%;height:6%;}
+.magia4{top:48%;left:8%;width:84%;height:6%;}
 
 </style>
 </head>
 
 <body>
-
-<!-- PAGINA 1 -->
 
 <div class="pagina">
 <img src="pagina1.png">
@@ -118,15 +129,9 @@ background:transparent;
 
 </div>
 
-
-<!-- PAGINA 2 -->
-
 <div class="pagina">
 <img src="pagina2.png">
 </div>
-
-
-<!-- PAGINA 3 -->
 
 <div class="pagina">
 <img src="pagina3.png">
@@ -136,9 +141,6 @@ background:transparent;
 <textarea class="campo avancados"></textarea>
 
 </div>
-
-
-<!-- PAGINA 4 -->
 
 <div class="pagina">
 <img src="pagina4.png">
@@ -150,9 +152,6 @@ background:transparent;
 <textarea class="campo itemImportante"></textarea>
 
 </div>
-
-
-<!-- PAGINA 5 -->
 
 <div class="pagina">
 <img src="pagina5.png">
